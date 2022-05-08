@@ -14,3 +14,6 @@ sosirii si declanseaza un buton "prezent". Imediat dupa declansarea butonului, s
 lista lui ca angajatul este prezent. În continuare, cât timp angajatul sta la serviciu, el primeste
 si, în consecinta, vede în fereastra lui, sarcinile transmise de sef. La plecare, angajatul închide
 fereastra, moment în care seful este notificat de delogarea acestuia din sistem.
+
+
+Am dezvoltat aplicatia in C#. Repository-ul foloseste Entity Framework.
