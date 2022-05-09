@@ -2,9 +2,6 @@
 using EmployeesMonitoringSystem.Service;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeesMonitoringSystem.Ui.Controllers
 {
@@ -34,9 +31,14 @@ namespace EmployeesMonitoringSystem.Ui.Controllers
             Service.RemoveEmployee(Int32.Parse(employeeId));
         }
 
-        internal void UpdateEmployee(string id, string newFirstname, string newLastname, string newJobTitle, string newUsername, string newPassword)
+        public void UpdateEmployee(string id, string newFirstname, string newLastname, string newJobTitle, string newUsername, string newPassword)
         {
             Service.UpdateEmployee(Int32.Parse(id), newFirstname, newLastname, newJobTitle, newUsername, newPassword);
+        }
+
+        public void LogOut()
+        {
+            Service.LogOut(CrtEmployee.Username);
         }
     }
 }

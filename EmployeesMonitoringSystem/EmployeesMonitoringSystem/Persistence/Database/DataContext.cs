@@ -1,6 +1,5 @@
 ﻿using EmployeesMonitoringSystem.Model;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace EmployeesMonitoringSystem.Persistence.Database
 {
@@ -14,6 +13,7 @@ namespace EmployeesMonitoringSystem.Persistence.Database
         public DataContext()
         {
             DbPath = "D:\\Facultate\\Semestrul 4\\ISS\\Lab\\ISS-Proiect\\EmployeesMonitoringSystem\\company.db";
+            this.ChangeTracker.LazyLoadingEnabled = false;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
