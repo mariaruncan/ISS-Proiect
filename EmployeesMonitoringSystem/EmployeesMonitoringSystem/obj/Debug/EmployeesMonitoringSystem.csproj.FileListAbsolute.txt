@@ -78,3 +78,4 @@ D:\Facultate\Semestrul 4\ISS\Lab\ISS-Proiect\EmployeesMonitoringSystem\Employees
 D:\Facultate\Semestrul 4\ISS\Lab\ISS-Proiect\EmployeesMonitoringSystem\EmployeesMonitoringSystem\obj\Debug\EmployeesMonitoringSystem.Ui.Forms.AdminForm.resources
 D:\Facultate\Semestrul 4\ISS\Lab\ISS-Proiect\EmployeesMonitoringSystem\EmployeesMonitoringSystem\obj\Debug\EmployeesMonitoringSystem.Ui.Forms.LogInForm.resources
 D:\Facultate\Semestrul 4\ISS\Lab\ISS-Proiect\EmployeesMonitoringSystem\EmployeesMonitoringSystem\obj\Debug\EmployeesMonitoringSystem.Ui.Forms.WorkerForm.resources
+D:\Facultate\Semestrul 4\ISS\Lab\ISS-Proiect\EmployeesMonitoringSystem\EmployeesMonitoringSystem\obj\Debug\EmployeesMonitoringSystem.Ui.Forms.BossForm.resources

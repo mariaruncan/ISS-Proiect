@@ -2,8 +2,6 @@
 using EmployeesMonitoringSystem.Persistence;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace EmployeesMonitoringSystem.Service
 {
@@ -77,7 +75,6 @@ namespace EmployeesMonitoringSystem.Service
         public List<Task> FindEmployeesTasks(int employeeId)
         {
             throw new NotImplementedException();
-            // return TasksRepo.FindTasksByEmployee(employeeId);
         }
         
         public List<Employee> FindLoggedEmployees()
@@ -92,6 +89,8 @@ namespace EmployeesMonitoringSystem.Service
             {
                 if (password != employee.Password)
                     throw new ServiceException("Authentication failed.");
+                if (employee.IsLogged)
+                    throw new ServiceException("Employee already logged in!");
                 employee.IsLogged = true;
                 EmployeesRepo.Update(employee, employee.Id);
             }
@@ -104,6 +103,8 @@ namespace EmployeesMonitoringSystem.Service
         public void LogOut(string username)
         {
             Employee employee = EmployeesRepo.FindByUsername(username);
+            if (!employee.IsLogged)
+                throw new ServiceException("Employee is not logged in!");
             employee.IsLogged = false;
             EmployeesRepo.Update(employee, employee.Id);
         }

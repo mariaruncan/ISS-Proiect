@@ -1,12 +1,5 @@
 ﻿using EmployeesMonitoringSystem.Ui.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmployeesMonitoringSystem.Ui.Forms
@@ -51,9 +44,6 @@ namespace EmployeesMonitoringSystem.Ui.Forms
             }
         }
 
-        private void LogInForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void LogInForm_Load(object sender, EventArgs e) { }
     }
 }

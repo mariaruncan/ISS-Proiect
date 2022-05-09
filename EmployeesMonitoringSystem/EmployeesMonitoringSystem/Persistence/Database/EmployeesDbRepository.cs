@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeesMonitoringSystem.Persistence.Database
 {
@@ -167,6 +165,7 @@ namespace EmployeesMonitoringSystem.Persistence.Database
                     emp.Jobtitle = elem.Jobtitle;
                     emp.Username = elem.Username;
                     emp.Password = elem.Password;
+                    emp.IsLogged = elem.IsLogged;
                     context.SaveChanges();
                 }
             }
