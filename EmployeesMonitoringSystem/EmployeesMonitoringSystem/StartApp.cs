@@ -20,6 +20,11 @@ namespace EmployeesMonitoringSystem
         [STAThread]
         static void Main()
         {
+            /*
+                maria, ionut - Workers
+                andrei, alina - Bosses
+                admin
+            */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             

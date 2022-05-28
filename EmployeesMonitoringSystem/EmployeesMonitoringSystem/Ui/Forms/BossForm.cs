@@ -77,6 +77,7 @@ namespace EmployeesMonitoringSystem.Ui.Forms
             try
             {
                 Ctrl.LogOut();
+                Ctrl.Service.RemoveObserverBosses(this);
             }
             catch (Exception ex)
             {

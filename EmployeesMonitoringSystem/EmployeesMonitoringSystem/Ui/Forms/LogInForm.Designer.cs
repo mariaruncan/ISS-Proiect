@@ -61,7 +61,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(171, 22);
             this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.Text = "admin";
+            this.textBoxPassword.Text = "parola";
             // 
             // buttonLogIn
             // 
