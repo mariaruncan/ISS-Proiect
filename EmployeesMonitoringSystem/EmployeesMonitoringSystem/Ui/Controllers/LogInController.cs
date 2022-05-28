@@ -5,10 +5,10 @@ namespace EmployeesMonitoringSystem.Ui.Controllers
 {
     public class LogInController
     {
-        public IService Service { get; set; }
+        public ServiceImpl Service { get; set; }
         public Employee CrtEmployee { get; set; }
 
-        public LogInController(IService service)
+        public LogInController(ServiceImpl service)
         {
             Service = service;
         }

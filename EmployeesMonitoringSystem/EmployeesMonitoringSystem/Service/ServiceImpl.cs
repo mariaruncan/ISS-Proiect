@@ -1,11 +1,12 @@
 ﻿using EmployeesMonitoringSystem.Model;
 using EmployeesMonitoringSystem.Persistence;
+using EmployeesMonitoringSystem.Utils;
 using System;
 using System.Collections.Generic;
 
 namespace EmployeesMonitoringSystem.Service
 {
-    public class ServiceImpl : IService
+    public class ServiceImpl : Observable
     {
         private IEmployeesRepositoy EmployeesRepo;
         private ITasksRepository TasksRepo;
@@ -54,12 +55,20 @@ namespace EmployeesMonitoringSystem.Service
 
         public void AssignTask(string title, string description, int employeeId)
         {
-            throw new NotImplementedException();
+            Employee emp = new Employee { Id = employeeId };
+            Task task = new Task { Title = title, Description = description, Employee = emp, StartTime = DateTime.Now, Status = TaskStatus.PENDING };
+            TasksRepo.Add(task);
+            UpdateWorkers(new Message { Type = "New task", Data = employeeId });
         }
 
-        public void CompleteTask(int taskId)
+        public void CompleteTask(int taskId, DateTime end)
         {
-            throw new NotImplementedException();
+            Task elem = TasksRepo.FindById(taskId);
+            if (elem.Status != TaskStatus.PENDING)
+                throw new Exception("The task is already completed!");
+            elem.EndTime = end;
+            elem.Status = TaskStatus.COMPLETED;
+            TasksRepo.Update(elem, taskId);
         }
 
         public List<Employee> FindAllEmployees()
@@ -74,12 +83,12 @@ namespace EmployeesMonitoringSystem.Service
 
         public List<Task> FindEmployeesTasks(int employeeId)
         {
-            throw new NotImplementedException();
+            return TasksRepo.FindTasksByEmployee(employeeId);
         }
         
         public List<Employee> FindLoggedEmployees()
         {
-            throw new NotImplementedException();
+            return EmployeesRepo.FindLoggedEmployees();
         }
 
         public void LogIn(string username, string password)
@@ -93,6 +102,10 @@ namespace EmployeesMonitoringSystem.Service
                     throw new ServiceException("Employee already logged in!");
                 employee.IsLogged = true;
                 EmployeesRepo.Update(employee, employee.Id);
+                if(employee.Jobtitle == JobTitle.WORKER)
+                {
+                    UpdateBosses(new Message { Type = "Log in", Data = employee.Username });
+                }
             }
             else
             {
@@ -107,6 +120,8 @@ namespace EmployeesMonitoringSystem.Service
                 throw new ServiceException("Employee is not logged in!");
             employee.IsLogged = false;
             EmployeesRepo.Update(employee, employee.Id);
+            if (employee.Jobtitle == JobTitle.WORKER)
+                UpdateBosses(new Message { Type = "Log out", Data = employee.Username });
         }
 
         public void RemoveEmployee(int employeeId)

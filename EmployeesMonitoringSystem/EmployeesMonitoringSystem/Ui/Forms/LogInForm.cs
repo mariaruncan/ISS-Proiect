@@ -28,12 +28,21 @@ namespace EmployeesMonitoringSystem.Ui.Forms
                         AdminForm form = new AdminForm(ctrl);
                         form.Text = "Admin";
                         form.Show();
-                        this.Hide();
                         break;
                     case Model.JobTitle.BOSS:
-                        throw new NotImplementedException();
+                        BossController ctrl1 = new BossController(Ctrl.Service, Ctrl.CrtEmployee);
+                        BossForm form1 = new BossForm(ctrl1);
+                        Ctrl.Service.AddObserverBoss(form1);
+                        form1.Text = "Boss";
+                        form1.Show();
+                        break;
                     case Model.JobTitle.WORKER:
-                        throw new NotImplementedException();
+                        WorkerController ctrl2 = new WorkerController(Ctrl.Service, Ctrl.CrtEmployee);
+                        WorkerForm form2 = new WorkerForm(ctrl2);
+                        Ctrl.Service.AddObserverWorker(form2);
+                        form2.Text = "Worker";
+                        form2.Show();
+                        break;
                 }
                 return;
             }

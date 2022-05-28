@@ -25,7 +25,7 @@ namespace EmployeesMonitoringSystem
             
             IEmployeesRepositoy employeesRepo = new EmployeesDbRepository();
             ITasksRepository tasksRepo = new TasksDbRepository();
-            IService service = new ServiceImpl(employeesRepo, tasksRepo);
+            ServiceImpl service = new ServiceImpl(employeesRepo, tasksRepo);
 
             LogInController ctrl = new LogInController(service);
             LogInForm form = new LogInForm(ctrl);
