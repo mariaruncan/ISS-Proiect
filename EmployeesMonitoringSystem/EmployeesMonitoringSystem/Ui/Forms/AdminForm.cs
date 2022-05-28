@@ -146,7 +146,6 @@ namespace EmployeesMonitoringSystem.Ui.Forms
             try
             {
                 Ctrl.LogOut();
-                Application.Exit();
             }
             catch (Exception ex)
             {

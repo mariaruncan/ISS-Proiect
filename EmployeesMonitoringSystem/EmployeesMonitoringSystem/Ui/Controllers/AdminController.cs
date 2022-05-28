@@ -7,10 +7,10 @@ namespace EmployeesMonitoringSystem.Ui.Controllers
 {
     public class AdminController
     {
-        public IService Service { get; set; }
+        public ServiceImpl Service { get; set; }
         public Employee CrtEmployee { get; set; }
 
-        public AdminController(IService service, Employee crtEmployee)
+        public AdminController(ServiceImpl service, Employee crtEmployee)
         {
             Service = service;
             CrtEmployee = crtEmployee;

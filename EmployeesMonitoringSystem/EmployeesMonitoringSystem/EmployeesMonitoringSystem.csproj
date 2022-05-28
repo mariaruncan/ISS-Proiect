@@ -171,7 +171,7 @@
     <Compile Include="Persistence\IEmployeesRepositoy.cs" />
     <Compile Include="Persistence\IRepository.cs" />
     <Compile Include="Persistence\ITasksRepository.cs" />
-    <Compile Include="Service\IService.cs" />
+    <Compile Include="Service\ServiceException.cs" />
     <Compile Include="Service\ServiceImpl.cs" />
     <Compile Include="StartApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +203,9 @@
     <Compile Include="Ui\Forms\WorkerForm.Designer.cs">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Message.cs" />
+    <Compile Include="Utils\Observable.cs" />
+    <Compile Include="Utils\Observer.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
