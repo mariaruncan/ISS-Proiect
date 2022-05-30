@@ -17,3 +17,4 @@ fereastra, moment în care seful este notificat de delogarea acestuia din sistem
 
 
 Am dezvoltat aplicatia in C#. Repository-ul foloseste Entity Framework.
+Foloseste Observer.
